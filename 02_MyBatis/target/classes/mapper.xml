@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cmwqqq">
+
+	<select id="getAllCoffee" resultType="com.cmw.mb.Coffee">
+		select * from coffee2
+	</select>
+	<select id="getAllCoffee_name" resultType="com.cmw.mb.Coffee" parameterType="com.cmw.mb.Coffee">
+		select * from coffee2 where c_name like '%'||#{c_name}||'%' 
+	</select>
+	
+	<select id="selectOverPrice" resultType="com.cmw.mb.Coffee" parameterType="com.cmw.mb.Coffee">
+		select * from coffee2 where c_price >= #{c_price}
+	</select>
+	
+	<select id="LowerPriceSelect" resultType="com.cmw.mb.Coffee" parameterType="Map">
+		select * from coffee2 where c_price &gt;= #{price1}
+	</select>
+
+	<insert id="regCoffee" parameterType="com.cmw.mb.Coffee">
+		insert into coffee2 values
+		(#{c_name}, #{c_price})
+	</insert>
+
+	<update id="updatePrice" parameterType="com.cmw.mb.Coffee">
+		update coffee2
+		set c_price
+		= #{c_price}
+		where c_name = #{c_name}
+	</update>
+	
+	<update id="updateCoffee_OverPrice"  parameterType="com.cmw.mb.Price">
+		update coffee2
+		set c_price
+		= #{price2}
+		where c_price >= #{price1}
+		
+	</update>
+	
+	<update id="updateCoffee_OverPrice2"  parameterType="map">
+		update coffee2
+		set c_price
+		= #{price2}
+		where c_price >= #{price1}
+		
+	</update>
+
+	<delete id="deleteCoffee" parameterType="com.cmw.mb.Coffee">
+		DELETE FROM coffee2
+		WHERE c_name = #{c_name}
+	</delete>
+
+</mapper>
