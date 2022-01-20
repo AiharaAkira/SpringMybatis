@@ -14,7 +14,11 @@
 	</select>
 	
 	<select id="LowerPriceSelect" resultType="com.cmw.mb.Coffee" parameterType="Map">
-		select * from coffee2 where c_price &gt;= #{price1}
+		select * from coffee2 where c_price &lt;= #{price1}
+	</select>
+	
+	<select id="selectPrice" resultType="com.cmw.mb.Coffee" parameterType="Map">
+		select * from coffee2 where c_price &lt; = #{price2} and c_price &gt; = #{price1}
 	</select>
 
 	<insert id="regCoffee" parameterType="com.cmw.mb.Coffee">

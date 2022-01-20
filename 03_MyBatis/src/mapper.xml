@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cmwqqq">
+
+	<insert id="regCurWeather"  parameterType="com.cmw.weather.Weather">
+	insert into weather01 values (weather01_seq.nextval,
+	#{w_temp}, #{w_country}, #{w_city}, #{w_description}, sysdate)
+	</insert>
+</mapper>
