@@ -2,8 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cmwqqq">
 
+	<select id="getAllWeather" resultType="com.cmw.weather.Weather">
+	select * from weather01
+	</select>
+	
+	
 	<insert id="regCurWeather"  parameterType="com.cmw.weather.Weather">
 	insert into weather01 values (weather01_seq.nextval,
 	#{w_temp}, #{w_country}, #{w_city}, #{w_description}, sysdate)
 	</insert>
+	
 </mapper>
