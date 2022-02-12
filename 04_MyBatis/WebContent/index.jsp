@@ -51,6 +51,7 @@
 </form>
 
 <h3>가격대 설정 검색</h3>
+<!-- range price search -->
 <form action="SearchTwoPriceController">
 최소가격:<input name="price1">
 최대가격:<input name="price2">

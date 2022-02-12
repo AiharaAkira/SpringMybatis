@@ -54,33 +54,31 @@ public class DAO {
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8",
 					new DefaultFileRenamePolicy());
 
-			//값
+			// 값
 			String name = mr.getParameter("name");
-			int price = Integer.parseInt(mr.getParameter("price")) ;
+			int price = Integer.parseInt(mr.getParameter("price"));
 			String img = mr.getFilesystemName("img");
 			String exp = mr.getParameter("exp");
-			
+
 			System.out.println(name);
 			System.out.println(price);
 			System.out.println(img);
 			System.out.println(exp);
-			
+
 			Product p = new Product();
 			p.setP_name(name);
 			p.setP_price(price);
 			p.setP_img(img);
 			p.setP_exp(exp);
-			
-			if(ss.insert("cmwqqq.insert", p) == 1) {
+
+			if (ss.insert("cmwqqq.insert", p) == 1) {
 				ss.commit();
 				ss.close();
 				System.out.println("등록성공!!");
-			}else {
-				
+			} else {
+
 				System.out.println("등록실패!!");
 			}
-			
-
 
 		} catch (IOException e) {
 			System.out.println("db서버문제!!");
@@ -89,121 +87,114 @@ public class DAO {
 	}
 
 	public static void delete(HttpServletRequest request) {
-		
+
 		try {
 			SqlSession ss = DBManager_new.connect();
 
-			//값
-			int no = Integer.parseInt(request.getParameter("no")) ;
+			// 값
+			int no = Integer.parseInt(request.getParameter("no"));
 			Map<String, Integer> num = new HashMap<String, Integer>();
 			num.put("no", no);
-			
-			
-			if(ss.delete("cmwqqq.delete", num) == 1) {
+
+			// 밑에와같이 할수도 있음
+//			Product p = new Product();
+//			p.setP_no(Integer.parseInt(request.getParameter("no")) );
+
+			if (ss.delete("cmwqqq.delete", num) == 1) {
 				ss.commit();
 				ss.close();
 				System.out.println("삭제성공!");
-			}else {
+			} else {
 				System.out.println("삭제실패!");
 			}
-			
-			
-			
-			
-			
-
 
 		} catch (IOException e) {
 			System.out.println("db서버문제!!");
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static void searchPrice(HttpServletRequest request) {
-		
+
 		try {
 			SqlSession ss = DBManager_new.connect();
 
-			//값
-			int price = Integer.parseInt(request.getParameter("price")) ;
+			// 값
+			int price = Integer.parseInt(request.getParameter("price"));
 			Map<String, Integer> prices = new HashMap<String, Integer>();
 			prices.put("price", price);
-			
-			List<Product> products = ss.selectList("cmwqqq.selectPrice",prices);
+
+			// 이렇게도 가능
+//			Product p = new Product();
+//			p.setP_price(Integer.parseInt(request.getParameter("price")));
+
+			List<Product> products = ss.selectList("cmwqqq.selectPrice", prices);
 			request.setAttribute("products", products);
-			
-			
-				System.out.println("가격검색성공!");
-			
-			
-			
-			
+
+			System.out.println("가격검색성공!");
 
 		} catch (IOException e) {
 			System.out.println("db서버문제!!");
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static void twoPriceSearch(HttpServletRequest request) {
-		
+
 		try {
 			SqlSession ss = DBManager_new.connect();
-
-			//값
-			int price1 = Integer.parseInt(request.getParameter("price1")) ;
-			int price2 = Integer.parseInt(request.getParameter("price2")) ;
+			
+			
+//			값 받을 때, 빈 하나 더 만들어서 해도 상관은 없으나 비효율적
+			//no, price로 숫자 값 2개를 넘길 수도 있다(유지보수 측면에서 하면 안됨)
+			
+			// 값
+			int price1 = Integer.parseInt(request.getParameter("price1"));
+			int price2 = Integer.parseInt(request.getParameter("price2"));
 			Map<String, Integer> prices = new HashMap<String, Integer>();
 			prices.put("price1", price1);
 			prices.put("price2", price2);
-			
-			List<Product> products = ss.selectList("cmwqqq.selectTwoPrice",prices);
+
+			List<Product> products = ss.selectList("cmwqqq.selectTwoPrice", prices);
 			request.setAttribute("products", products);
-			
-			
-				System.out.println("가격검색성공!");
-			
-			
-			
-			
+
+			System.out.println("가격검색성공!");
 
 		} catch (IOException e) {
 			System.out.println("db서버문제!!");
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static void updatePrice(HttpServletRequest request) {
-		
+
 		try {
 			SqlSession ss = DBManager_new.connect();
 
-			//값
-			int price1 = Integer.parseInt(request.getParameter("price1")) ;
-			int price2 = Integer.parseInt(request.getParameter("price2")) ;
+			// 값
+			int price1 = Integer.parseInt(request.getParameter("price1"));
+			int price2 = Integer.parseInt(request.getParameter("price2"));
 			Map<String, Integer> prices = new HashMap<String, Integer>();
 			prices.put("price1", price1);
 			prices.put("price2", price2);
-			
-			if(ss.update("cmwqqq.updatePrice",prices)==1) {
+
+			if (ss.update("cmwqqq.updatePrice", prices) >= 1) {
 				ss.commit();
 				ss.close();
 				System.out.println("가격인상성공!");
-			}else {
+			} else {
 				System.out.println("가격인상실패!");
-				
+
 			}
-			
-				
 
 		} catch (IOException e) {
 			System.out.println("db서버문제!!");
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

@@ -25,6 +25,6 @@ select * from product01 where p_price &lt;= #{price2} and p_price &gt;= #{price1
 </select>
 
 <update id="updatePrice" parameterType="Map">
-update product01 set p_price = #{price2} where p_price &lt;= #{price1}
+update product01 set p_price = p_price + #{price2} where p_price &lt;= #{price1}
 </update>
 </mapper>
