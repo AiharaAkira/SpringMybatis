@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="d" class="com.cmw.springdi.Dog">
+		<constructor-arg value="하영"></constructor-arg>
+		<constructor-arg value="5"></constructor-arg>
+	</bean>
+	<bean id="d2" class="com.cmw.springdi.Dog">
+		<constructor-arg value="초롱"></constructor-arg>
+		<constructor-arg value="3"></constructor-arg>
+	</bean>
+<!-- 생성자 -->
+	<bean id="d3" class="com.cmw.springdi.Dog">
+		<constructor-arg value="초코"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+	</bean>
+<!-- setter -->
+	<bean id="d4" class="com.cmw.springdi.Dog">
+		<property name="name" value="하늘"></property>
+		<property name="age" value="7"></property>
+	</bean>
+
+
+	<bean id="h" class="com.cmw.springdi.Human">
+		<property name="name" value="akira"></property>
+		<property name="age" value="17"></property>
+		<property name="weight" value="80"></property>
+		<property name="height" value="180"></property>
+	</bean>
+	
+	<bean id="h2" class="com.cmw.springdi.Human">
+		<property name="name" value="akira"></property>
+		<property name="age" value="17"></property>
+		<property name="weight" value="80"></property>
+		<property name="height" value="180"></property>
+	</bean>
+	
+	<bean id="c" class="com.cmw.springdi.Coffee">
+		<constructor-arg >
+			<list>
+				<value>원두</value>
+				<value>우유</value>
+				<value>시럽</value>
+				<value>물</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map key-type="java.lang.String" value-type="java.lang.Double">
+				<entry key="탄" value="12"></entry>
+				<entry key="단" value="11"></entry>
+				<entry key="지" value="10"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="cat" class="com.cmw.springdi.Cat">
+		<constructor-arg ref="catMaster"></constructor-arg>
+	</bean>
+	
+	<bean id="catMaster" class="com.cmw.springdi.Human">
+		<property name="name" value="akira"></property>
+		<property name="age" value="17"></property>
+		<property name="weight" value="80"></property>
+		<property name="height" value="180"></property>
+	</bean>
+
+</beans>
+
+
