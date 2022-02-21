@@ -17,5 +17,14 @@
 		
 	</form>
 	
+	<h1>Test</h1>
+	<form action="item.purchase">
+		상품가격:<input name="price">
+		수량:<input name="cnt">
+		<button>계산</button>
+		
+	</form>
+	
+	
 </body>
 </html>

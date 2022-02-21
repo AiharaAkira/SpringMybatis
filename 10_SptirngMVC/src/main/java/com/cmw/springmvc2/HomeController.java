@@ -55,6 +55,17 @@ public class HomeController {
 
 		return "input";
 	}
+	
+	@RequestMapping(value = "/item.purchase", method = RequestMethod.GET)
+	public String itemPurchase(Bean b, HttpServletRequest request) {
 
+
+		Calc.calc(b, request);
+		
+
+		return "output";
+	}
+	
+	
 
 }
