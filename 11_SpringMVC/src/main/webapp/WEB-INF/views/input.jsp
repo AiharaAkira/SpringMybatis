@@ -8,7 +8,11 @@
 </head>
 <body>
 
-	
+	<form action="calc.do">
+		값1:<input name="x">
+		값2:<input name="y">
+		<button>계산</button>
+	</form>
 
 </body>
 </html>
