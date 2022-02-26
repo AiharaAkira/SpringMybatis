@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class M {
 
-	public static void calc(Bean b, HttpServletRequest request) {
+	public void calc(Bean b, HttpServletRequest request) {
 
 		int x = b.getX();
 		int y = b.getY();

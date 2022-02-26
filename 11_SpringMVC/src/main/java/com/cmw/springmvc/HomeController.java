@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
-	
+	private M m;
 	//11_SpringMvc
 	
 		//v=x,y
@@ -34,7 +34,7 @@ public class HomeController {
 	@RequestMapping(value = "/calc.do", method = RequestMethod.GET)
 	public String home(Bean b, HttpServletRequest request) {
 		
-		M.calc(b,request);
+		m.calc(b,request);
 		
 		return "output";
 	}
