@@ -23,6 +23,6 @@
 	
 	<context:component-scan base-package="com.cmw.springmvc" />
 	
-	
+	<!-- <beans:bean id="d" class="com.cmw.springmvc.M"></beans:bean> -->
 	
 </beans:beans>
