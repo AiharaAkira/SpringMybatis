@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mz.pj.community.CommunityMapper">
+
+	<select id="getMember" resultType="com.mz.pj.member.Member">
+		select * from pj_member order by m_id
+	</select>
+	
+	<select id="getMsg"	parameterType="com.mz.pj.member.Member"
+		resultType="com.mz.pj.community.CommunityMsg">
+		select * from pj_community
+		where c_to = #{m_id}
+		order by c_when desc
+	</select>
+	
+	<delete id="deleteMsg" parameterType="com.mz.pj.community.CommunityMsg">
+		delete from
+		pj_community where c_no = #{c_no}
+	</delete>
+	
+	<insert id="sendMsg" parameterType="com.mz.pj.community.CommunityMsg">
+		insert into	pj_community
+		values(pj_community_seq.nextval, #{c_from},
+		#{c_to}, #{c_txt}, sysdate)
+	</insert>
+</mapper>

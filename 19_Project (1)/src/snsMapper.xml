@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mz.pj.sns.SNSMapper">
+
+<select id="getMsgCount" parameterType="com.mz.pj.sns.SNSSelector" resultType="java.lang.Integer">
+	select count(*)
+	from pj_sns, pj_member
+	where s_owner = m_id
+	and s_txt like '%'||#{search}||'%'
+</select>
+
+
+<select id="getMsg" resultType="com.mz.pj.sns.SNSMsg" parameterType="SNSSelector">
+			select *
+			from (
+				select rownum as rn, s_no, s_owner, s_txt, s_date, m_photo
+				from (
+					select * from pj_sns, pj_member
+					where s_owner = m_id and s_txt like '%'||#{search}||'%'
+					order by s_date desc
+				)
+			)
+			where rn &gt;= #{start} and rn &lt;= #{end}
+
+</select>
+
+	<select id="getReply" parameterType="com.mz.pj.sns.SNSMsg" resultType="com.mz.pj.sns.SNSReply">
+		select *
+		from pj_sns_reply
+		where r_s_no = #{s_no}
+	</select>
+
+
+<insert id="writeMsg" parameterType="com.mz.pj.sns.SNSMsg">
+	insert into pj_sns values(pj_sns_seq.nextval, #{s_owner}, #{s_txt}, sysdate)
+</insert>
+
+
+	<insert id="writeReply"	parameterType="com.mz.pj.sns.SNSReply">
+		insert into pj_sns_reply
+		values(pj_sns_reply_seq.nextval,
+		#{r_s_no}, #{r_owner},
+		#{r_txt}, sysdate)
+	</insert>
+
+<delete id="deleteMsg"
+		parameterType="com.mz.pj.sns.SNSMsg">
+		delete from pj_sns
+		where s_no = #{s_no}
+	</delete>
+	<delete id="deleteReply"
+		parameterType="com.mz.pj.sns.SNSReply">
+		delete from pj_sns_reply
+		where r_no = #{r_no}
+	</delete>
+
+
+
+	<update id="updateMsg"
+		parameterType="com.mz.pj.sns.SNSMsg">
+		update pj_sns
+		set s_txt = #{s_txt}
+		where s_no = #{s_no}
+	</update>
+
+	<select id="getMsgCountByOwner"
+		parameterType="com.mz.pj.member.Member"
+		resultType="java.lang.Integer">
+		select count(*)
+		from pj_sns
+		where s_owner = #{m_id}
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

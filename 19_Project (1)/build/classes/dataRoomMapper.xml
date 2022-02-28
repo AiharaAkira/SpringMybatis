@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mz.pj.dataroom.DataRoomMapper">
+
+	<select id="get" resultType="com.mz.pj.dataroom.DataRoomFile">
+		select * from pj_dataroom order by d_title
+	</select>
+
+	<insert id="upload"
+		parameterType="com.mz.pj.dataroom.DataRoomFile">
+		insert into pj_dataroom values(pj_dataroom_seq.nextval, #{d_owner},
+		#{d_title}, #{d_file}, #{d_category})
+	</insert>
+
+	<delete id="delete" parameterType="com.mz.pj.dataroom.DataRoomFile">
+		delete from pj_dataroom where d_no = #{d_no}
+
+	</delete>
+</mapper>

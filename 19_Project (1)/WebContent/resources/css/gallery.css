@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.anImg{
+	float: left;
+	background-color: white;
+	font-weight: 900;
+	font-family: "a";
+	margin: 10px;
+}
+.anImg img{
+	margin:7px;
+	max-width: 200px;
+}

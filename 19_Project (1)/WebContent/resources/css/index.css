@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-image: url("../img/winter_night-Winter_landscape_desktop_Wallpapers_2560x1600.jpg");
+	background-size: contain;
+	background-attachment: fixed;
+}
+
+button {
+	cursor: pointer;
+}
+
+input, button, textarea, select {
+	outline: none;
+	font-family: "a";
+}
+
+textarea {
+	resize: none;
+}
+
+@font-face {
+	font-family: "a";
+	src: url("a.TTF");
+}
+
+
+#siteTitleArea {
+	position: fixed;
+	top: -40px;
+	left: 0px;
+	width: 100%;
+	border-spacing: 0px;
+	transition: all 0.4s ease-out;
+}
+
+#siteMenuArea {
+	height: 50px;
+}
+
+#siteMenu {
+	width: 1000px;
+}
+
+#siteMenu td {
+	width: 25%;
+}
+
+#siteMenu img {
+	width: 13%;
+}
+
+#siteMenu img:hover {
+	width: 10%;
+}
+
+#siteTitleArea2 {
+	height: 50px;
+}
+
+#siteTitle {
+	font-family: "a";
+	width: 1000px;
+	color: #FFFFFF;
+	font-size: 27pt;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+#siteTitle:hover {
+	text-shadow: 0px 0px 10px #FFFFFF;
+}
+
+#siteContentArea {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 65px;
+	transition: all 0.4s ease-out;
+}
+
+#homeImg {
+	max-width: 40%;
+  /*	opacity: 0.9;  */
+}
+
+
+#weatherArea {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	
+	font-family: "a";
+	background-color: #FBC02DCC;
+	font-size: 12pt;
+	box-shadow: 0px 0px 30px #FBC02D;
+	font-weight: 900;
+	border-radius: 20px;
+}
+
+#weatherArea td {
+	padding: 5px;
+}
+
+
+
+
+#resultArea {
+	color: yellow;
+	font-size: 11pt;
+	font-weight: 800;
+}
+
+
+
+
+
+
+
+
+

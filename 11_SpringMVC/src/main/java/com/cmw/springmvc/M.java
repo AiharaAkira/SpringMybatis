@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class M {
 	public void calc(Bean b, HttpServletRequest request) {
-
+		
 		int x = b.getX();
 		int y = b.getY();
-		//
+		
 		request.setAttribute("r", (x+y));
 		
 	}

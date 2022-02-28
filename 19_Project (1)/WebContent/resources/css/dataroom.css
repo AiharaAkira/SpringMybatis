@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+#drUploadArea {
+	position: fixed;
+	bottom: 10px;
+	left: 0px;
+	width: 100%;
+	transition:all 0.4s ease-out;
+}
+
+#drUploadTable {
+	width: 1000px;
+	border-spacing: 0px;
+	background-color: #000000BF;
+}
+
+#drUploadTable input {
+	border: none;
+	background-color: transparent;
+	width: 330px;
+	font-size: 14pt;
+	font-weight: 800;
+	color: white;
+	padding: 10px;
+}
+
+#drUploadTable select {
+	border: none;
+	background-color: white;
+	width: 100px;
+	font-size: 14pt;
+	font-weight: 800;
+	color: black;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#drUploadTable button {
+	color: white;
+	font-size: 17pt;
+	font-weight: 800;
+	background-color: transparent;
+	border: none;
+}
+.aFile{
+	float: left;
+	height: 100px;
+	border-radius: 13px;
+	margin: 30px;
+	font-family: "a";
+	font-weight: 900;
+}
+.afTitle{
+	font-size: 16pt;
+}
+.aFile td{
+	padding: 10px;
+}
+#drUploadFormSummoner{
+	cursor:pointer;
+}

@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+#snsWriteArea {
+	position: fixed;
+	left: 0px;
+	width: 100%;
+	transition:all 0.4s ease-out;
+}
+
+#snsWriteTable {
+	width: 1000px;
+	border-spacing: 0px;
+	background-color: #000000BF;
+}
+
+#snsWriteTable textarea {
+	border: none;
+	background-color: transparent;
+	width: 800px;
+	height: 100px;
+	font-size: 14pt;
+	font-weight: 800;
+	color: white;
+	padding: 10px;
+}
+
+#snsWriteTable button {
+	color: white;
+	font-size: 17pt;
+	font-weight: 800;
+	background-color: transparent;
+	border: none;
+}
+
+#swtTd1 {
+	border-left: white solid 4px;
+	border-top: white solid 4px;
+	border-bottom: white solid 4px;
+}
+
+#swtTd2 {
+	border-right: white solid 4px;
+	border-top: white solid 4px;
+	border-bottom: white solid 4px;
+}
+
+
+.aSNSMsg {
+	margin: 30px;
+	font-family: "a";
+	font-weight: 900;
+	width: 90%;
+	background-color: #FFFFFFBF;
+	font-size: 12pt;
+	box-shadow: 0px 0px 30px white;
+	border-radius: 13px;
+}
+
+.aSNSMsg td {
+	padding: 10px;
+}
+.asmImgTd {
+	width: 100px;
+}
+
+.asmImgTd img {
+	max-width: 90px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px black;
+}
+
+.asmOwner {
+	font-size: 18pt;
+}
+
+.asmTxt {
+	word-break: break-all;
+}
+
+
+#snsL {
+	color: white;
+	font-size: 70pt;
+	font-weight: 900;
+	position: fixed;
+	top: 50%;
+	left: 150px;
+}
+
+#snsR {
+	color: white;
+	font-size: 70pt;
+	font-weight: 900;
+	position: fixed;
+	top: 50%;
+	right: 150px;
+}
+
+
+#snsL:hover, #snsR:hover {
+	text-shadow: 0px 0px 10px white;
+}
+
+#snsSearchArea {
+	position: fixed;
+	top: 105px;
+	left: -239px;
+	border-spacing: 0px;
+	transition:all 0.4s ease-out;
+}
+
+#ssaTd1 {
+	border-top: white solid 3px;
+	border-bottom: white solid 3px;
+	border-left: white solid 3px;
+}
+
+#ssaTd2 {
+	border-top: white solid 3px;
+	border-bottom: white solid 3px;
+	border-right: white solid 3px;
+}
+
+#snsSearchArea input {
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-size: 13pt;
+	font-weight: 800;
+	padding: 5px;
+	width: 180px;
+}
+
+#snsSearchArea button {
+	font-size: 13pt;
+	font-weight: 800;
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+.asmReply{
+	font-size: 11pt;
+}
+.asmrOwner{
+	margin-right: 10px;
+	font-size: 12pt;
+}
+.asmrWhen{
+	font-size: 9pt;
+}
+.asmrBtn{
+	border: none;
+	background-color: transparent;
+	font-size: 11pt;
+	font-weight: 900;
+}
+.asmrInput{
+	border: none;
+	border-bottom:black solid 2px;
+	background-color: transparent;
+	font-size: 11pt;
+	width:80%;
+	font-weight: 900;
+}
+
+#snsSearchArea {
+	position: fixed;
+	top: 105px;
+	left: -239px;
+	border-spacing: 0px;
+	transition:all 0.4s ease-out;
+}
+
+#snsSearchArea input {
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-size: 13pt;
+	font-weight: 800;
+	padding: 5px;
+	width: 180px;
+}
+
+#snsSearchArea button {
+	font-size: 13pt;
+	font-weight: 800;
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+
+#snsWriteFormSummoner{
+	cursor:pointer;
+	font-weight: 900;
+	font-size: 30pt;
+}
+#snsSearchFormSummoner{
+	cursor:pointer;
+	margin-left: 5px;
+}

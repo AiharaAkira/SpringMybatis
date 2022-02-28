@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+#loginTable input {
+	border: #FFFFFF solid 3px;
+	background-color: transparent;
+	padding: 5px;
+	font-weight: 900;
+	width: 165px;
+	font-size: 14pt;
+	color: white;
+}
+
+#loginTable input::placeholder {
+	color: #FFFFFF;
+}
+
+#loginTable button {
+	background-color: transparent;
+	color: #FFFFFF;
+	border: none;
+	font-size: 15pt;
+	font-weight: 900;
+}
+
+#loginTable button:hover {
+	text-shadow: 0px 0px 10px #FFFFFF;
+}
+
+
+
+
+#loginSuccessTable {
+	font-size: 15pt;
+	font-family: "a";
+	font-weight: 900;
+	color: #FFFFFF;
+}
+
+#loginSuccessTable img {
+	max-width: 60px;
+	border-radius: 10px;
+}
+
+#loginSuccessName {
+	color: white;
+}
+
+#loginSuccessTable button {
+	border: none;
+	background-color: transparent;
+	width: 72px;
+	font-size: 13pt;
+	font-weight: 900;
+	color: #FFFFFF;
+}
+
+#loginSuccessTable button:hover {
+	text-shadow: 0px 0px 10px #FFFFFF;
+}
+
+
+
+#joinTable {
+	font-family: "a";
+	width: 60%;
+	font-size: 18pt;
+	color: #FFFFFF;
+	border-spacing: 0px;
+	font-weight: 900;
+}
+
+#joinTable .td1 {
+	width: 100px;
+	padding: 10px;
+	border-left: #FFFFFF solid 3px;
+	border-top: #FFFFFF solid 3px;
+}
+
+#joinTable .td2 {
+	border-right: #FFFFFF solid 3px;
+	border-top: #FFFFFF solid 3px;
+}
+
+#joinTable input {
+	border: none;
+	width: 85%;
+	height: 40px;
+	font-size: 17pt;
+	font-weight: 800;
+	background-color: transparent;
+	color: white;
+}
+
+#joinTable input::placeholder {
+	color: white;
+}
+
+#joinTable button {
+	border: none;
+	background-color: #FFFFFF;
+	width: 40%;
+	height: 50px;
+	font-size: 17pt;
+	font-weight: 900;
+	color: black;
+}
+
+#joinTableTitle {
+	background-color: #FFFFFF;
+	font-size: 30pt;
+	font-weight: 900;
+	height: 70px;
+	color: black;
+}
+
+
+#updateMemberIDInput {
+	color: black;
+	font-size: 30pt;
+	font-weight: 900;
+	text-align: center;
+}
+
+#updateMemberPhoto {
+	max-width: 90%;
+}
+
+#addrSearchBtn {
+	cursor: pointer; color : white;
+	border: none;
+	font-size: 16pt;
+	font-weight: 900;
+	width: 100px;
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

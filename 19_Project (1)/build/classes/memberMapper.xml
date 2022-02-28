@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mz.pj.member.MemberMapper">
+	<insert id="join" parameterType="com.mz.pj.member.Member">
+		insert into pj_member
+		values(#{m_id}, #{m_pw},
+		#{m_name}, #{m_addr}, #{m_photo})
+	</insert>
+
+
+	<select id="getMemberByID" resultType="com.mz.pj.member.Member">
+		select * from pj_member
+		where m_id = #{m_id}
+	</select>
+
+	<delete id="bye" parameterType="com.mz.pj.member.Member">
+		delete from pj_member
+		where m_id =
+		#{m_id}
+	</delete>
+
+	<update id="update" parameterType="com.mz.pj.member.Member">
+		update pj_member
+		set
+		m_pw=#{m_pw},
+		m_name=#{m_name}, m_addr=#{m_addr}, m_photo=#{m_photo}
+		where
+		m_id=#{m_id}
+	</update>
+
+
+</mapper>
