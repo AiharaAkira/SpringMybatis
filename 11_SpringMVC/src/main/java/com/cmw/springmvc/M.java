@@ -12,7 +12,7 @@ public class M {
 
 		int x = b.getX();
 		int y = b.getY();
-		
+		//
 		request.setAttribute("r", (x+y));
 		
 	}
