@@ -1,0 +1,24 @@
+spring 작업순서
+
+처음 프로젝트 만들어서 세팅
+
+1. 프로젝트 생성후 실행
+
+(순서가 정답이 없음)
+
+2. post 방식 한글처리 - web.xml
+
+3.jar파일들 - porm.xml
+
+4.db
+Spring + MyBatis
+	config.xml(x) >> servlet-context.xml
+*****
+두개 한세트(namespace 인터페이스 풀경로)
+자바인터페이스 사용하면 mapper를 부르는 방식
+mapper.xml
+interface
+
+___________
+
+5.메뉴,sql,view
