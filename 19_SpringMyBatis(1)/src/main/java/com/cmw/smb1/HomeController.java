@@ -40,7 +40,7 @@ public class HomeController {
 	public String regMenuDo(Menu m,HttpServletRequest request) {
 		//모델
 		mDAO.regMenu(m,request);
-		return "select";
+		return "home";
 	}
 	
 }
