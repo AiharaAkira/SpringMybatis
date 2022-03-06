@@ -6,8 +6,20 @@
 		select * from menu01
 	</select>
 	
+	<select id="detailMenu" parameterType="com.cmw.smb1.Menu" resultType="com.cmw.smb1.Menu">
+		select * from menu01 where = #{m_no}
+	</select>
+	
 	<insert id="regMenu" parameterType="com.cmw.smb1.Menu">
 		insert into menu01 values(menu01_seq.nextval, #{m_name}, #{m_price})
 	</insert>
+	
+	<delete id="delMenu" parameterType="com.cmw.smb1.Menu">
+		delete menu01 where m_no = #{m_no}
+	</delete>
+	
+	<update id="updateMenu" parameterType="com.cmw.smb1.Menu">
+		update menu01 set m_price = #{m_price} where m_no = #{m_no}
+	</update>
 
 </mapper>

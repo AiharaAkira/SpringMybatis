@@ -20,6 +20,13 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String homeback() {
+		
+		
+		return "home";
+	}
+	
 	@RequestMapping(value = "/menu.show", method = RequestMethod.GET)
 	public String getAllMenu(HttpServletRequest request) {
 		//모델
@@ -41,6 +48,57 @@ public class HomeController {
 		//모델
 		mDAO.regMenu(m,request);
 		return "home";
+	}
+	
+	@RequestMapping(value = "/menu.del.do", method = RequestMethod.GET)
+	public String delMenuDo(Menu m, HttpServletRequest request) {
+		//모델
+		//delete
+		mDAO.delMenu(m, request);
+		mDAO.getAllMenu(request);
+		
+		return "select";
+	}
+	
+	@RequestMapping(value = "/menu.update.do", method = RequestMethod.GET)
+	public String delUpdateDo(Menu m, HttpServletRequest request) {
+		//모델
+		//update
+		mDAO.updateMenu(m, request);
+		mDAO.getAllMenu(request);
+		
+		return "select";
+	}
+	
+	@RequestMapping(value = "/menu.modify.go", method = RequestMethod.GET)
+	public String modiMenuGo(Menu m, HttpServletRequest request) {
+		//모델
+		
+		return "update";
+	}
+	
+	@RequestMapping(value = "/menu.modi.do", method = RequestMethod.GET)
+	public String modiMenuDo(Menu m, HttpServletRequest request) {
+		
+		//모델
+		//update
+		mDAO.updateMenu(m, request);
+		mDAO.getAllMenu(request);
+		
+		
+		return "select";
+	}
+	
+	
+	@RequestMapping(value = "/menu.detail.go", method = RequestMethod.GET)
+	public String detailMenuGo(Menu m, HttpServletRequest request) {
+		
+		//모델
+		//delete
+		mDAO.getMenu(m, request);
+		
+		
+		return "detail";
 	}
 	
 }

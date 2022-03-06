@@ -10,4 +10,10 @@ public interface MyMapper {
 
 	int regMenu(Menu m);
 
+	int delMenu(Menu m);
+
+	int updateMenu(Menu m);
+
+	Menu detailMenu(Menu m);
+
 }
