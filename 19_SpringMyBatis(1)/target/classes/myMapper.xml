@@ -7,7 +7,7 @@
 	</select>
 	
 	<select id="detailMenu" parameterType="com.cmw.smb1.Menu" resultType="com.cmw.smb1.Menu">
-		select * from menu01 where = #{m_no}
+		select * from menu01 where m_no = #{m_no}
 	</select>
 	
 	<insert id="regMenu" parameterType="com.cmw.smb1.Menu">
@@ -18,8 +18,33 @@
 		delete menu01 where m_no = #{m_no}
 	</delete>
 	
-	<update id="updateMenu" parameterType="com.cmw.smb1.Menu">
+	<!-- <update id="updateMenu" parameterType="com.cmw.smb1.Menu">
 		update menu01 set m_price = #{m_price} where m_no = #{m_no}
+	</update> -->
+	
+	
+	<update id="updateMenu" parameterType="com.cmw.smb1.Menu">
+		<!-- mybatis홈페이지에 동적sql 관련 자료 존재-->
+		update menu01
+		<set>
+		<if test='m_name != ""'>
+		m_name = #{m_name}
+		</if>
+		
+		<if test='m_name != "" and m_price != null'>
+		,
+		</if>
+		
+		<if test='m_price != null'>
+		m_price = #{m_price}
+		</if>
+		</set>
+		
+		where m_no = #{m_no}
+	</update>
+	
+	<update id="updateMenu2" parameterType="com.cmw.smb1.Menu">
+		update menu01 set m_price = #{m_price}, m_name = #{m_name} where m_no = #{m_no}
 	</update>
 
 </mapper>

@@ -60,6 +60,7 @@ public class HomeController {
 		return "select";
 	}
 	
+	//가격만 바꿀 수 있음
 	@RequestMapping(value = "/menu.update.do", method = RequestMethod.GET)
 	public String delUpdateDo(Menu m, HttpServletRequest request) {
 		//모델
@@ -70,6 +71,7 @@ public class HomeController {
 		return "select";
 	}
 	
+	
 	@RequestMapping(value = "/menu.modify.go", method = RequestMethod.GET)
 	public String modiMenuGo(Menu m, HttpServletRequest request) {
 		//모델
@@ -77,17 +79,18 @@ public class HomeController {
 		return "update";
 	}
 	
-	@RequestMapping(value = "/menu.modi.do", method = RequestMethod.GET)
-	public String modiMenuDo(Menu m, HttpServletRequest request) {
-		
-		//모델
-		//update
-		mDAO.updateMenu(m, request);
-		mDAO.getAllMenu(request);
-		
-		
-		return "select";
-	}
+//	//메뉴명도 바꿀 수 있음
+//	@RequestMapping(value = "/menu.modi.do", method = RequestMethod.GET)
+//	public String modiMenuDo(Menu m, HttpServletRequest request) {
+//		
+//		//모델
+//		//update
+//		mDAO.updateMenu2(m, request);
+//		mDAO.getAllMenu(request);
+//		
+//		
+//		return "select";
+//	}
 	
 	
 	@RequestMapping(value = "/menu.detail.go", method = RequestMethod.GET)

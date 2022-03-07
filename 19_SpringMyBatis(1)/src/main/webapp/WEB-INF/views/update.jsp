@@ -8,8 +8,17 @@
 </head>
 <body>
 
-	<form action="menu.modi.do">
-		메뉴가격:<input name="m_price">
+	<form action="menu.update.do">
+		메뉴가격	:	<input name="m_price">
+		<!--  input type="hidden" value="${param.m_no}" name="m_no"-->
+		<button value="${param.m_no}" name="m_no">수정</button>
+	</form>
+	
+<hr>
+
+	<form action="menu.update.do">
+		메뉴명	:	<input name="m_name">
+		메뉴가격	:	<input name="m_price">
 		<!--  input type="hidden" value="${param.m_no}" name="m_no"-->
 		<button value="${param.m_no}" name="m_no">수정</button>
 	</form>
