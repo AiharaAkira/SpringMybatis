@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cmw.smb2.Mapper">
-	
-	<select id="getAllProduct">
+
+	<select id="getAllProduct" resultType="com.cmw.smb2.Product">
 		select * from product02
 	</select>
+
+	<select id="searchProductByRange"
+		resultType="com.cmw.smb2.Product" parameterType="com.cmw.smb2.Price">
+		select * from
+		product02 where p_price &gt;= #{num1} and p_price &lt;= #{num2}
+	</select>
+
+	<select id="searchProductByName"
+		resultType="com.cmw.smb2.Product" parameterType="com.cmw.smb2.Product">
+		select * from
+		product02 where p_name like '%'||#{p_name}||'%'
+	</select>
 	
+	<select id="searchProductByLowerPrice"
+		resultType="com.cmw.smb2.Product" parameterType="com.cmw.smb2.Product">
+		select * from
+		product02 where p_price &lt;= #{p_price}
+	</select>
+
+	<!-- 
+	ORACLE 
+	WHERE column LIKE '%'||#{param}||'%' 
+	MS-SQL
+	WHERE column LIKE '%'+#{param}+'%' 
+	MY-SQL 
+	WHERE column LIKE CONCAT('%',#{param},'%')
+	 -->
+
+	<delete id="deleteProduct" parameterType="com.cmw.smb2.Product">
+		delete product02 where
+		p_no = #{p_no}
+	</delete>
+
+	<insert id="regProduct" parameterType="com.cmw.smb2.Product">
+		insert into product02
+		values(product02_seq.nextval, #{p_name}, #{p_img}, #{p_price},
+		#{p_exp})
+	</insert>
+	
+	<update id="updateNewPrice" parameterType="Map">
+		update product02 set p_price = #{newPrice} where p_price = #{p_price}
+	</update>
+
 </mapper>

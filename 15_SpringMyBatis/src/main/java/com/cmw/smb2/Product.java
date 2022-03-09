@@ -1,6 +1,7 @@
 package com.cmw.smb2;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Product {
 
@@ -8,7 +9,7 @@ public class Product {
 	private String p_name;
 	private String p_img;
 	private BigDecimal p_price;
-	private String p_exp;
+	private Date p_exp;
 	
 	public Product() {
 		// TODO Auto-generated constructor stub
@@ -46,15 +47,15 @@ public class Product {
 		this.p_price = p_price;
 	}
 
-	public String getP_exp() {
+	public Date getP_exp() {
 		return p_exp;
 	}
 
-	public void setP_exp(String p_exp) {
+	public void setP_exp(Date p_exp) {
 		this.p_exp = p_exp;
 	}
 
-	public Product(BigDecimal p_no, String p_name, String p_img, BigDecimal p_price, String p_exp) {
+	public Product(BigDecimal p_no, String p_name, String p_img, BigDecimal p_price, Date p_exp) {
 		super();
 		this.p_no = p_no;
 		this.p_name = p_name;
