@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//validCheck.js : 유효성 검사 라이브러리
+	//					가져다 쓰면 편함
+
+	//JQuery.js : JS 전반 관련해서 함수 정리
+	//				js할때 jQuery쓰면 편함
+</script>
+
+<script type="text/javascript" src="jQuery.js"></script>
+
+<script type="text/javascript">
+	//jQuery(선택자).이벤트(콜백함수);
+	//js내장 객체, "CSS선택자"
+	//js의 onload
+
+	//이 html ready가 되면 tt함수를 자동호출
+	/* jQuery(document).ready(function() {
+		
+		alert('akira!!');
+		
+	}); */
+
+	/* $(document).ready(function() {
+		alert('akira!!!');
+	}); */
+
+	//callback함수
+	//이벤트에 연결이 되어서 그이벤트가 발생하면 자동으로 호출
+	//$로 대체가능, 콜백함수는 이름이 없으면 생략가능
+	//이게main
+	$(function() {
+		let h = $("#h");
+		alert(h);
+		
+		$("button").click(function() {
+			alert('button');
+		})
+		
+		$('h1').click(function() {
+			alert('h1');
+		})
+
+	});
+</script>
+
+</head>
+<body>
+
+	<h1 id="h">akira Aihara</h1>
+	<button>gg</button>
+	<button>gg</button>
+	<button>gg</button>
+	<button>gg</button>
+
+
+</body>
+</html>

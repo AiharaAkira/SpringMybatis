@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<style>
+#img1{
+position: fixed;
+top:0px;
+left: 0px;
+transition:all 0.2s ease-out;
+}
+</style>
+
+<script type="text/javascript">
+	$(function() {
+
+		// body에 있는거 다 나오고나서 : onload 이벤트
+		// 그게 이거. jQuery 사용준비 or main이라고 생각
+
+		//jQuery/javaScript : 컨트롤러 거치지 않고 html을 수정
+		//css 수정
+
+		$('#b1').click(function() {
+			alert('1 button');
+			//$(선택자).CSS("속성명","값");
+			$('h1').css('color', 'red')
+		});
+
+		$('#b2').click(function() {
+			$('h1').css('font-family', "궁서").css("background-color", "yellow");
+		});
+		
+		//한번에 여러개 효과
+		//$(선택자).함수().함수().함수().함수()
+		
+		//getter, setter 따로없음
+		//바꿀내용이 있으면 :setter
+		//바꿀내용이 없으면 :setter
+		$('#b3').click(function() {
+			$('h1').css("color","blue");	//setter
+			let c = $('h1').css('color');	//getter
+			alert(c);
+		});
+		
+		$('#b4').click(function() {
+			let h1Color = $('h1').css('color');
+			$('#b4').css("background-color",h1Color);
+			
+		});
+		
+		setInterval(function() {
+			let x = Math.random() * 500;
+			let y = Math.random() * 500;
+			
+				$("#img1").css("top", x+'px');
+				$("#img1").css("left", y+'px');
+			
+		}, 500);
+		
+		$('.test').click(function() {
+			alert($('.test').val())
+			
+			if($('.test').val()=='night mode'){
+				$('body').css('background-color','black');
+				$('body').css('color','white');
+				$('.test').val('day mode');
+				$('.test').text('day mode');
+			}else if($('.test').val()=='day mode'){
+				$('body').css('background-color','white');
+				$('body').css('color','black');
+				$('.test').val('night mode');
+				$('.test').text('night mode');
+			}
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+	<h1>akira</h1>
+	<button id="b1">b1</button>
+	<button id="b2">b2</button>
+	<button id="b3">b3</button>
+	<button id="b4">b4</button>
+	<img id="img1" src="3.png"  style="max-width:150px;positon:fixed; transiton: all 0.5s ease-out;">
+	<input type="button" class="test" value="night mode">
+	<button class="test">night mode</button>
+
+</body>
+</html>

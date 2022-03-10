@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		let t1visible =false;
+		$('#b1').click(function() {
+			if(t1visible){
+				$('#t1').css('left','-68px');
+				
+			}else{
+				$('#t1').css('left','0px');
+			}
+			
+			t1visible =!t1visible;
+		});
+		
+		$('#b2').click(function() {
+			if(t1visible){
+				$('#t2').css('opacity','0');
+				
+			}else{
+				$('#t2').css('opacity','1');
+			}
+			
+			t1visible =!t1visible;
+		});
+		
+		
+		$('#b3').click(function() {
+			if(t1visible){
+				$('#t3').css('visibility','visible');
+				
+			}else{
+				$('#t3').css('visibility','hidden');
+			}
+			
+			t1visible =!t1visible;
+		});
+		
+		
+		
+		
+	});
+</script>
+<style>
+#t1{
+position: fixed;
+left: 0px;
+transition:all 0.2s ease-out;
+}
+
+#t2{
+opacity:0;
+transition:all 0.2s ease-out;
+}
+
+#t3{
+visibility:visible;
+transition:all 0.2s ease-out;
+}
+</style>
+
+</head>
+<body>
+	<button id="b1">메뉴</button>
+	<table id="t1">
+		<tr>
+			<td><a href="">구글로</a></td>
+		</tr>
+		<tr>
+			<td><a href="">네이버로</a></td>
+		</tr>
+		<tr>
+			<td><a href="">다음으로</a></td>
+		</tr>
+	</table>
+
+	<button id="b2">메뉴</button>
+	<table id="t2">
+		<tr>
+			<td><a href="">구글로</a></td>
+		</tr>
+		<tr>
+			<td><a href="">네이버로</a></td>
+		</tr>
+		<tr>
+			<td><a href="">다음으로</a></td>
+		</tr>
+	</table>
+
+	<button id="b3">메뉴</button>
+	<table id="t3">
+		<tr>
+			<td><a href="">구글로</a></td>
+		</tr>
+		<tr>
+			<td><a href="">네이버로</a></td>
+		</tr>
+		<tr>
+			<td><a href="">다음으로</a></td>
+		</tr>
+	</table>
+</body>
+</html>

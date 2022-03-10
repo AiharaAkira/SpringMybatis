@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		let tf = false;
+
+		$('#b1').mouseover(function() {
+			if (tf) {
+				$('#menuTbl').css('top', '-100px');
+			} else {
+				$('#menuTbl').css('top', '40px');
+			}
+
+			tf = !tf;
+		})
+
+		$('#b2').click(function() {
+			$('#menuTbl').animate({
+				width : "1000px",
+				fontSize : "30pt"
+			}, 2000, "linear", function() {
+
+			});
+		});
+
+		$('#b3').click(function() {
+			let aa = $("#menuTbl").css("right");
+			aa = aa.replace("px","");
+			//+'px'or'250px'
+			if(aa > 250){
+				
+				$('#menuTbl').animate({
+					marginLeft : "+=300px"
+				}, 300, "swing", function() {
+					
+				});
+				
+			}else{
+				$('#menuTbl').css("marginLeft","0px");
+			}
+			
+			
+
+		});
+
+	});
+</script>
+<style type="text/css">
+#menuTbl {
+	position: fixed;
+	top: 40px;
+	left: 110px;
+	transition: all 0.5s ease-out;
+}
+</style>
+
+</head>
+<body>
+	<button id="b1">☆</button>
+	<button id="b2">☆</button>
+	<button id="b3">☆</button>
+
+	<table id="menuTbl" style="width: 700px; height: 60px;">
+
+		<tr>
+			<td align="center">a</td>
+			<td align="center">b</td>
+			<td align="center">c</td>
+		</tr>
+	</table>
+
+</body>
+</html>
