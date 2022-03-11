@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$('#star a').click(function() {
+			$(this).parent().children("a").removeClass("on");
+			$(this).addClass("on").prevAll("a").addClass("on");
+			//alert($(this).find(a).val());
+			alert($(this).attr("value"));
+			
+		});
+
+	});
+</script>
+<style type="text/css">
+#star a {
+	text-decoration: none;
+	color: gray;
+}
+
+#star a.on {
+	color: red;
+}
+</style>
+
+</head>
+<body>
+	<P id="star">
+		<!-- 부모 -->
+		<a href="#" value="1">★</a>
+		<!-- 자식들-->
+		<a href="#" value="2">★</a>
+		<a href="#" value="3">★</a>
+		 <a href="#"value="4">★</a> 
+		<a href="#" value="5">★</a>
+	<p>
+</body>
+</html>

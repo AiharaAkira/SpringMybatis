@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		
+		$('#b1').click(function() {
+			let aa = [1,2,3];
+			for(var i = 0; i < aa.length; i++){
+				alert(aa[i]);
+			}
+			
+		});
+		
+		$('#b2').click(function() {
+			let obj = {"name":"cmw","age":"20"};
+			//alert(obj);
+			
+			let ar = [{"name":"cmw","age":"20"},{"name":"akira","age":"20"}];
+			for(var i = 0; i< ar.length; i++){
+				alert(ar[i].name);
+				alert(ar[i].age);
+			}
+		});
+		
+		$('#b3').click(function() {
+			let ar = [{"name":"cmw","age":"20"},
+				{"name":"akira","age":"20"},
+				{"name":"akira2","age":"20"}];
+			
+			for (var i = 0; i < ar.length; i++) {
+				
+				alert(ar[i].name + " "+ ar[i].age);
+				
+			}
+			
+		});
+		
+		$('#b4').click(function() {
+			let ar = [{"name":"cmw","age":"20"},
+				{"name":"akira","age":"20"},
+				{"name":"akira2","age":"20"}];
+			
+			//$.each(배열,function(인덱스,객체))
+			
+			$.each(ar, function(i, person) {
+				
+//				alert(ar[i].name +" "+ ar[i].age);
+				alert(person.name +" "+ person.age);
+				
+			});
+			
+		});
+		
+		$('#b5').click(function() {
+			
+			$('button').each(function(i, b) {
+				$(b).css('font-size', (i+1)*5 + "pt");
+			});
+			
+		});
+		
+		
+		
+		$('#b6').click(function() {
+			let ar = [
+				{w:100,c:'red'},
+				{w:50,c:'orange'},
+				{w:150,c:'yellow'},
+				{w:200,c:'green'},
+				{w:160,c:'blue'},
+				{w:120,c:'purple'}
+			];
+			//DOM객체 대상
+			//이런식이면 버튼 6개 선택
+			$('button').each(function(i, b) {
+				//6개니까 당연히 6번 반복
+				$(b).css('width',ar[i].w + 'px').css('color',ar[i].c);
+			});
+		});
+		
+		
+		
+		
+		
+	
+	});
+</script>
+
+<style type="text/css">
+	
+</style>
+
+</head>
+<body>
+
+	<button id="b1">배열</button>
+	<button id="b2">객체</button>
+	<button id="b3">배열+객체</button>
+	<button id="b4">배열+객체(jQuery)</button>
+	<button id="b5">DOM 객체 대상</button>
+	<button id="b6">버튼6</button>
+
+
+</body>
+</html>

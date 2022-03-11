@@ -14,10 +14,36 @@ $(function() {
 		
 		//$(this):이벤트가 발생한 '그' 객체
 		$(this).css('background-color', 'red');
-	
 		
+		//버튼을 누르면 눌러진 그 버튼이 소속된 td의 색
+		$(this).parent().css('background-color', 'black');
+	
+		//눌러진 그 버튼이 소속된 테이블의 넓이
+		//$(this).parent().parent().parent().css('width','400px');
+		
+		//.closest:상위중 가장 가까운 거 찾기
+		$(this).closest('table').css('width','400px');
+		
+		let tdColor = $(this).parent().find('input').val();
+		$(this).closest('td').css('border','5px solid ' + tdColor);
 		
 	});
+	
+	
+	
+	
+	$('td').click(function() {
+		
+		//td를 눌렀을때 해당 td의 배경색을 pink색으로
+		$(this).css('background-color','pink');
+		//td를 눌렀을때 해당 td안에 있는 버튼의 배경색을 red로
+		$(this).find('button').css('background-color','red');
+		//td를 눌렀을때 해당 td안에 있는 버튼 width를 150px로
+		$(this).children('button').css('width','150px');
+		
+	})
+	
+	
 	
 });
 </script>
