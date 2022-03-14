@@ -6,4 +6,10 @@
 	select * from building order by b_floor desc
 </select>
 
+<select id="searchShop" resultType="com.cmw.ajax.Shop" parameterType="Map">
+	select * 
+	from building 
+	where b_floor &gt;= #{start} and b_floor &lt;= #{end} order by b_floor desc
+</select>
+
 </mapper>
