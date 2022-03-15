@@ -9,5 +9,5 @@ insert into building values (3, '헬스장');
 insert into building values (4, '볼링장');
 insert into building values (5, '학원');
 insert into building values (6, '병원');
-
+--
 select * from building;
