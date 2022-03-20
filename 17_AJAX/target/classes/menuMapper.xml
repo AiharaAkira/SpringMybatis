@@ -2,4 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cmw.ajax.MenuMapper">
 
+	
+	<select id="getAllMenu" resultType="com.cmw.ajax.Menu">
+		select * from menu2
+	</select>
+	
+	<select id="getMenuJSONByName" resultType="com.cmw.ajax.Menu">
+		select * from menu2 where m_name like '%'||#{m_name}||'%'
+	</select>
+
 </mapper>
