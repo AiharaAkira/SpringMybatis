@@ -29,4 +29,11 @@ public class MenuDAO {
 		return m;
 	}
 
+	public Menus getMenuXmlByName(Menu mmm) {
+		List<Menu> menus = ss.getMapper(MenuMapper.class).getMenuJSONByName(mmm);
+		Menus m = new Menus(menus);
+		
+		return m;
+	}
+
 }

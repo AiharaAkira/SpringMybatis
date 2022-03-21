@@ -141,7 +141,7 @@
 
 
 </beans:beans>
-
+3.web.xml
 	<!-- 한글설정 -->
 
 	<filter>

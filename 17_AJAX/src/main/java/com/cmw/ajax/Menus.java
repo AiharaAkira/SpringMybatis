@@ -8,25 +8,32 @@ import com.sun.xml.txw2.annotation.XmlElement;
 
 @XmlRootElement
 public class Menus {
-	private List<Menu> menus;
+	private List<Menu> zzzz;
+	
 	
 	public Menus() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<Menu> getMenus() {
-		return menus;
-	}
-	
-	@XmlElement
-	public void setMenus(List<Menu> menus) {
-		this.menus = menus;
+
+	public List<Menu> getZzzz() {
+		return zzzz;
 	}
 
-	public Menus(List<Menu> menus) {
-		super();
-		this.menus = menus;
+	@XmlElement
+	public void setZzzz(List<Menu> zzzz) {
+		this.zzzz = zzzz;
 	}
+
+
+	public Menus(List<Menu> zzzz) {
+		super();
+		this.zzzz = zzzz;
+	}
+	
+	
+	
+	
 	
 	
 }

@@ -46,4 +46,12 @@ public class HomeController {
 		return mm;
 	}
 	
+	@RequestMapping(value = "/menu.get.xml.name", method = RequestMethod.GET,
+			produces = "application/xml; charset=utf-8")
+	public @ResponseBody Menus menuXmlByName(Menu m) {
+		
+		Menus mm = mDAO.getMenuXmlByName(m);
+		return mm;
+	}
+	
 }

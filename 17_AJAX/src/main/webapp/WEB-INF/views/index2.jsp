@@ -38,11 +38,36 @@
 				});
 			}
 		});
+		
+		$('#b2').click(function() {
+		//$('#i1').keyup(function() {
+			let inputVal = $("#i2").val();
+
+			if ($("#i2").val() != "") {
+
+				$.ajax({
+
+					url : "/ajax/menu.get.xml.name",
+					type : 'GET',
+					dataType : 'xml',
+					data : {
+						"m_name" : inputVal
+					},
+
+					success : function(data) {
+						$("#mainTbl").empty();
+						console.log(data);
+						successcall2(data); 
+					}
+
+				});
+			}
+		});
 
 	});
 
 	function successcall(data) {
-		data = data["menus"];
+		data = data["zzzz"];
 		$.each(data, function(i, m) {
 			//console.log(data[i]);//같은결과
 			//console.log(m);//같은결과
@@ -51,6 +76,24 @@
 			$('#td' + i).text(m.m_name);
 
 		});
+		
+		
+	}
+	
+	function successcall2(data) {
+		data = $(data).find('menus');
+		//console.log(data);
+		$.each(data, function(i, m) {
+			//console.log(data[i]);//같은결과
+			//console.log(m);//같은결과
+			let name = $(m).find("m_name").text();
+			//console.log(name);
+			$("#mainTbl").append("<tr><td>"+ name +"</td></tr>");
+			//$('#td' + i).text(m.m_name);
+
+		});
+		
+		
 	}
 </script>
 </head>
@@ -59,6 +102,9 @@
 
 	<input id="i1" autocomplete="off" placeholder="메뉴명 검색">
 	<button>확인</button>
+	<hr>
+	<input id="i2" autocomplete="off" placeholder="메뉴명 검색">
+	<button id="b2">확인</button>
 	<hr>
 
 	<a href="home1">홈1</a>
