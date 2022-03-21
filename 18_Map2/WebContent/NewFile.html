@@ -31,51 +31,73 @@
 
 		//https://dapi.kakao.com/v2/local/search/keyword.json?
 
-				
-		$("#search").keyup(function(e) {
-			if(e.keyCode == 13){
-				let search = $(this).val();
-				
-				$.ajax({
-					url : "https://dapi.kakao.com/v2/local/search/keyword.json",
-					data : {
-						query : search,
-						x : 37.556567,
-						y : 126.943366,
-						radius : 5000
-					},
-					beforeSend : function(req) {
-						req.setRequestHeader("Authorization",
-								"KakaoAK 0172b72d9317e5bbb5d67b16667edd8a");
-					},
-					success : function(result) {
-						console.log(result);
-						console.log(JSON.stringify(result));
-					
-						// 마커가 표시될 위치입니다 
-						var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+		$("#search")
+				.keyup(
+						function(e) {
+							if (e.keyCode == 13) {
+								let search = $(this).val();
 
-						// 마커를 생성합니다
-						var marker = new kakao.maps.Marker({
-						    position: markerPosition
+								$
+										.ajax({
+											url : "https://dapi.kakao.com/v2/local/search/keyword.json",
+											data : {
+												query : search,
+												x : 37.556567,
+												y : 126.943366,
+												radius : 5000
+											},
+											beforeSend : function(req) {
+												req
+														.setRequestHeader(
+																"Authorization",
+																"KakaoAK 0172b72d9317e5bbb5d67b16667edd8a");
+											},
+											success : function(result) {
+												console.log(result);
+												console.log(JSON
+														.stringify(result));
+												let newY = 0;
+												let newX = 0;
+												newY = result.documents[0].y;							
+												newX = result.documents[0].x;
+												
+												$
+														.each(
+																result.documents,
+																function(i, l) {
+																	console
+																			.log(l.place_name);
+
+																	// 마커를 생성합니다
+																	var marker = new kakao.maps.Marker(
+																			{
+																				map : map,
+																				// 마커가 표시될 위치입니다 
+																				position : new kakao.maps.LatLng(
+																						l.y,
+																						l.x)
+																			});
+																});
+
+												// 이동할 위도 경도 위치를 생성합니다 
+												var moveLatLon = new kakao.maps.LatLng(
+														newY, newX);
+												// 지도 중심을 이동 시킵니다
+											    map.setCenter(moveLatLon);
+												
+
+												// 마커가 지도 위에 표시되도록 설정합니다
+												//marker.setMap(map);
+
+												// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+												// marker.setMap(null);    
+
+											}
+
+										});
+
+							}
 						});
-						
-						// 마커가 지도 위에 표시되도록 설정합니다
-						marker.setMap(map);
-						
-						// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-						// marker.setMap(null);    
-
-						
-						
-					}
-					
-				});
-				
-				
-			}
-		});		
-				
 
 	});
 </script>
