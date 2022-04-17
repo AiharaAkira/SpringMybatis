@@ -1,0 +1,159 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1",
+		"title": "서울특별시 양천구 음식점 현황",
+		"description": ""
+	},
+	"host": "api.odcloud.kr",
+	"basePath": "/api",
+	"schemes": [
+		"https",
+		"http"
+	],
+	"securityDefinitions": {
+		"ApiKeyAuth": {
+			"type": "apiKey",
+			"in": "header",
+			"name": "Authorization"
+		},
+		"ApiKeyAuth2": {
+			"type": "apiKey",
+			"in": "query",
+			"name": "serviceKey"
+		}
+	},
+	"paths": {
+		"/15035771/v1/uddi:993923fe-3270-4fc6-89e6-e4c1b3ff511c_201909041431": {
+			"get": {
+				"tags": [
+					"API 목록"
+				],
+				"summary": "",
+				"operationId": "GETuddi:993923fe-3270-4fc6-89e6-e4c1b3ff511c_201909041431",
+				"description": "서울특별시 양천구 음식점 현황_20210924",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "page",
+						"in": "query",
+						"description": "page index",
+						"type": "integer",
+						"format": "int64",
+						"exclusiveMinimum": false,
+						"default": 1
+					},
+					{
+						"name": "perPage",
+						"in": "query",
+						"description": "page size",
+						"type": "integer",
+						"format": "int64",
+						"exclusiveMinimum": false,
+						"default": 10
+					},
+					{
+						"name": "returnType",
+						"in": "query",
+						"description": "응답의 데이터 타입을 선택할 수 있습니다. (기본값: JSON)<br/>XML형태의 응답결과를 얻기 위해서는 XML 값으로 설정",
+						"type": "string",
+						"exclusiveMinimum": false
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "성공적으로 수행 됨",
+						"schema": {
+							"$ref": "#/definitions/uddi:993923fe-3270-4fc6-89e6-e4c1b3ff511c_201909041431_api"
+						}
+					},
+					"401": {
+						"description": "인증 정보가 정확 하지 않음"
+					},
+					"500": {
+						"description": "API 서버에 문제가 발생하였음"
+					}
+				},
+				"security": [
+					{
+						"ApiKeyAuth": []
+					},
+					{
+						"ApiKeyAuth2": []
+					}
+				]
+			}
+		}
+	},
+	"definitions": {
+		"uddi:993923fe-3270-4fc6-89e6-e4c1b3ff511c_201909041431_model": {
+			"type": "object",
+			"properties": {
+				"업종명": {
+					"type": "string",
+					"description": ""
+				},
+				"업태명": {
+					"type": "string",
+					"description": ""
+				},
+				"업소명": {
+					"type": "string",
+					"description": ""
+				},
+				"인허가일자": {
+					"type": "string",
+					"description": ""
+				},
+				"소재지(도로명)": {
+					"type": "string",
+					"description": ""
+				},
+				"소재지(지번)": {
+					"type": "string",
+					"description": ""
+				},
+				"영업장면적": {
+					"type": "string",
+					"description": ""
+				},
+				"데이터기준일자": {
+					"type": "string",
+					"description": ""
+				}
+			}
+		},
+		"uddi:993923fe-3270-4fc6-89e6-e4c1b3ff511c_201909041431_api": {
+			"type": "object",
+			"properties": {
+				"page": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"perPage": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"totalCount": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"currentCount": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"data": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/uddi:993923fe-3270-4fc6-89e6-e4c1b3ff511c_201909041431_model"
+					}
+				}
+			}
+		}
+	}
+}
