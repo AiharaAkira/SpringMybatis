@@ -23,12 +23,12 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan base-package="com.cmw.smb" />
+	<context:component-scan base-package="com.cmw.market" />
 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
+			value="jdbc:oracle:thin:@DESKTOP-C4H3JEL:1521:orcl" />
 		<beans:property name="username" value="cmw" />
 		<beans:property name="password" value="cmw" />
 	</beans:bean>
@@ -40,10 +40,10 @@
 
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="typeAliasesPackage" value="com.cmw.smb" />
+		<beans:property name="typeAliasesPackage" value="com.cmw.market" />
 		<beans:property name="mapperLocations">
 			<beans:list>
-				<beans:value>classpath:myMapper.xml</beans:value>
+				<beans:value>classpath:mapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -53,9 +53,7 @@
 			ref="sqlSessionFactory" />
 	</beans:bean>
 
-	<beans:bean id="so" class="com.cmw.smb">
-				<beans:constructor-arg value="4"></beans:constructor-arg>	
-	</beans:bean>
+	
 
 
 

@@ -1,12 +1,10 @@
 package com.mz.pj.gallery;
 
-import java.io.File;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.catalina.util.URLEncoder;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.tomcat.jni.File;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
